@@ -11,7 +11,10 @@ public class MainApp {
 		
 		Administrador administrador = (Administrador) applicationContext.getBean("admin");
 	
-		administrador.imprimirDireccion();
+		//va a mandar a llamar al metodo toString que va a ser lo que va a mostrar
+		System.out.println(administrador);
+
+		//		administrador.imprimirDireccion();
 	
 		((ClassPathXmlApplicationContext)applicationContext).close();
 	}

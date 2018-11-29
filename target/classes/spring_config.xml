@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 
+
+	<context:component-scan base-package="com.um"></context:component-scan>
 	
-	<bean id="admin" class="com.um.Administrador">
-		<!-- CONSTRUCTOR INJECTION
-		
-		<constructor-arg name="idAd" value="88"></constructor-arg>
-		<constructor-arg name="nombre" value="Pepe"></constructor-arg> -->
-
-		<!-- PROPERTY INJECTION 
-		
-		<property name="idAd" value="77"></property>
-		<property name="nombre" value="Brennda"></property> -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+<!-- 	dónde esta mi bd -->
+	<property name="url" value="jdbc:mysql://localhost:3306/springbd?useLegacyDatetimeCode=false&amp;serverTimezone=UTC"></property> 
+	<property name="username" value="root"></property>
+	<property name="password" value="root"></property>
 	</bean>
+	
 </beans>

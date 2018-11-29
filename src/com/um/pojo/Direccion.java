@@ -1,4 +1,4 @@
-package com.um;
+package com.um.pojo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

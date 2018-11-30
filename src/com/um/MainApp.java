@@ -1,6 +1,7 @@
 package com.um;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -24,14 +25,16 @@ public class MainApp {
 		
 		Timestamp ts = new Timestamp(new Date().getTime());
 		
-		Admin admin = new Admin();
-		admin.setCargo("gerente");
-		admin.setNombre("Pepecito");
-		admin.setFechaCreacion(ts);
-		
+//		Admin admin = new Admin();
+//		admin.setCargo("gerente");
+//		admin.setNombre("Martin");
+//		admin.setFechaCreacion(ts);
+//		
 		try{
-			//invocar metodo del dao
-			adminDao.save(admin);
+			//invocar metodo del dao para salvar
+//			adminDao.save(admin);
+//		
+			 
 			
 //			List<Admin> admins = adminDao.findAll();
 //		
@@ -39,9 +42,37 @@ public class MainApp {
 //				System.out.println(admin2);
 //			}
 			
-			System.out.println(adminDao.findById(1));
+			/*System.out.println(adminDao.findById(1));
 			System.out.println(adminDao.findById(4));
-			System.out.println(adminDao.findByNombre("j").toString());
+			System.out.println(adminDao.findByNombre("j").toString());*/
+//			Admin admin = adminDao.findById(1);
+			
+		//	 System.out.println("Admin con id 1:" + admin);
+		//	 
+		//	 admin.setCargo("subgerente");
+		//	 admin.setNombre("martin rojo");
+		//	 
+		//	 if(adminDao.update(admin)) {
+		//		 //si retorna true es porque se actualizo
+		//		 System.out.println("Actualizado correctamente" + admin);
+		//		 
+		//	 }
+		//	 
+		//	 if(adminDao.delete(admin.getIdAd())) {
+		//		 System.out.println("Admin: " + admin.getNombre() + "eliminado correctamente");
+		//	 }
+
+			List<Admin> admins = new ArrayList<Admin>();
+			admins.add(new Admin(30, "pedro", "jefe de ingenieria", ts));
+			admins.add(new Admin(31, "jorge", "subjefe de ingenieria", ts));
+			admins.add(new Admin(32, "maria", "representante de ingenieria", ts));
+			
+			
+			int [] valores = adminDao.saveAll(admins);
+			
+			for( int i : valores) {
+				System.out.println("Filas afectadas por esta operacion " + i);
+			}
 			
 		} 
 		catch (CannotGetJdbcConnectionException ex) {

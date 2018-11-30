@@ -9,6 +9,28 @@ public class Admin {
 	private String nombre;
 	private String cargo;
 	private Timestamp fechaCreacion;
+
+
+	public Admin() {
+	
+	}
+
+	
+	public Admin(int idAd, String nombre, String cargo, Timestamp fechaCreacion) {
+		super();
+		this.idAd = idAd;
+		this.nombre = nombre;
+		this.cargo = cargo;
+		this.fechaCreacion = fechaCreacion;
+	}
+
+
+	public Admin(String nombre, String cargo, Timestamp fechaCreacion) {
+		this.nombre = nombre;
+		this.cargo = cargo;
+		this.fechaCreacion = fechaCreacion;
+	}
+
 	public int getIdAd() {
 		return idAd;
 	}

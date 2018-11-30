@@ -64,7 +64,7 @@ public class MainApp {
 
 			List<Admin> admins = new ArrayList<Admin>();
 			admins.add(new Admin(30, "pedro", "jefe de ingenieria", ts));
-			admins.add(new Admin(31, "jorge", "subjefe de ingenieria", ts));
+			admins.add(new Admin(31, "jorge", "subjefe de ingenieria", ts)); 	
 			admins.add(new Admin(32, "maria", "representante de ingenieria", ts));
 			
 			
